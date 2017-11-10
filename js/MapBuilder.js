@@ -15,6 +15,7 @@ MapBuilder.WALL_HEIGHTS = [
 // https://github.com/kittykatattack/learningPixi
 // https://github.com/pixijs/pixi-particles
 // https://github.com/edwinwebb/pixi-seed
+// http://renderhjs.net/shoebox/
 
 MapBuilder.prototype.createMap = function () {
 
