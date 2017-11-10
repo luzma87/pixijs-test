@@ -1,10 +1,12 @@
 function Mid() {
     let texture = PIXI.Texture.fromImage("resources/background/bg-mid.png");
 
-    PIXI.extras.TilingSprite.call(this, texture, Main.WIDTH, Main.HEIGHT);
+    let sprite = PIXI.extras.TilingSprite.call(this, texture, Main.WIDTH, Main.HEIGHT);
+    sprite.scale.y = 1.2;
+    sprite.scale.x = 1.2;
 
     this.position.x = 0;
-    this.position.y = 128;
+    this.position.y = 193;
     this.tilePosition.x = 0;
     this.tilePosition.y = 0;
 

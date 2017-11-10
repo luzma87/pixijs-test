@@ -1,7 +1,9 @@
 function Far() {
     let texture = PIXI.Texture.fromImage("resources/background/bg-far.png");
 
-    PIXI.extras.TilingSprite.call(this, texture, Main.WIDTH, Main.HEIGHT);
+    let sprite = PIXI.extras.TilingSprite.call(this, texture, Main.WIDTH, Main.HEIGHT);
+    sprite.scale.y = 1.96;
+    sprite.scale.x = 1.5;
 
     this.position.x = 0;
     this.position.y = 0;
