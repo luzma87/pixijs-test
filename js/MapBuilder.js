@@ -11,7 +11,10 @@ MapBuilder.WALL_HEIGHTS = [
     116 + 128  // Highest slice
 ];
 
-//http://pixijs.io/examples/#/basics/spritesheet.js
+// http://pixijs.io/examples/#/basics/spritesheet.js
+// https://github.com/kittykatattack/learningPixi
+// https://github.com/pixijs/pixi-particles
+// https://github.com/edwinwebb/pixi-seed
 
 MapBuilder.prototype.createMap = function () {
 
