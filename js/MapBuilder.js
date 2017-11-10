@@ -11,6 +11,8 @@ MapBuilder.WALL_HEIGHTS = [
     116 + 128  // Highest slice
 ];
 
+//http://pixijs.io/examples/#/basics/spritesheet.js
+
 MapBuilder.prototype.createMap = function () {
 
     let spans = 50;
