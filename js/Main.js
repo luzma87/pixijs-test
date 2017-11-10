@@ -19,7 +19,7 @@ Main.WIDTH = 1024;
 Main.HEIGHT = 500;
 
 Main.MIN_SCROLL_SPEED = 5;
-Main.MAX_SCROLL_SPEED = 5;
+Main.MAX_SCROLL_SPEED = 15;
 Main.SCROLL_ACCELERATION = 0.005;
 
 Main.prototype.update = function () {
@@ -41,6 +41,7 @@ Main.prototype.speedMeUp = function () {
 Main.prototype.loadSpriteSheet = function () {
     let loader = PIXI.loader;
     loader.add("wall", "resources/wall.json");
+    loader.add("gold_coin_1", "resources/coins/gold_coin_1.json");
     loader.add("bg-mid", "resources/background/bg-mid.png");
     loader.add("bg-far", "resources/background/bg-far.png");
     loader.once("complete", this.spriteSheetLoaded.bind(this));

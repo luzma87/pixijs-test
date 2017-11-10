@@ -14,7 +14,9 @@ MapBuilder.WALL_HEIGHTS = [
 MapBuilder.prototype.createMap = function () {
 
     let spans = 50;
+
     let stepChance = 0.3;
+    let coinChance = 0.8;
 
     for (let i = 0; i < spans; i++) {
         const isStepped = Math.random() <= stepChance;

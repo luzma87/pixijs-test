@@ -1,6 +1,4 @@
 function WallSpritesPool() {
-    this.windows = [];
-
     this.createWindows();
     this.createDecorations();
     this.createFrontEdges();
