@@ -12,40 +12,25 @@ MapBuilder.WALL_HEIGHTS = [
 ];
 
 MapBuilder.prototype.createMap = function () {
-    this.createWallSpan(1, 30);
-    this.createGap(1);
-    this.createWallSpan(2, 18);
-    this.createGap(1);
-    this.createSteppedWallSpan(2, 5, 28);
-    this.createGap(1);
-    this.createWallSpan(1, 10);
-    this.createGap(1);
-    this.createWallSpan(2, 6);
-    this.createGap(1);
-    this.createWallSpan(1, 8);
-    this.createGap(1);
-    this.createWallSpan(2, 6);
-    this.createGap(1);
-    this.createWallSpan(1, 8);
-    this.createGap(1);
-    this.createWallSpan(2, 7);
-    this.createGap(1);
-    this.createWallSpan(1, 16);
-    this.createGap(1);
-    this.createWallSpan(2, 6);
-    this.createGap(1);
-    this.createWallSpan(1, 22);
-    this.createGap(2);
-    this.createWallSpan(2, 14);
-    this.createGap(2);
-    this.createWallSpan(3, 8);
-    this.createGap(2);
-    this.createSteppedWallSpan(3, 5, 12);
-    this.createGap(3);
-    this.createWallSpan(0, 8);
-    this.createGap(3);
-    this.createWallSpan(1, 50);
-    this.createGap(20);
+
+    let spans = 50;
+    let stepChance = 0.3;
+
+    for (let i = 0; i < spans; i++) {
+        const isStepped = Math.random() <= stepChance;
+        const minHeight = isStepped ? 2 : 0;
+        const height = getRandomInt(minHeight, 4);
+        const length = getRandomInt(5, 30);
+        const gapLength = getRandomInt(1, 3);
+
+        if (isStepped) {
+            const secondLength = getRandomInt(5, 30);
+            this.createSteppedWallSpan(height, length, secondLength);
+        } else {
+            this.createWallSpan(height, length);
+        }
+        this.createGap(gapLength);
+    }
 };
 
 MapBuilder.prototype.createGap = function (spanLength) {
@@ -110,3 +95,7 @@ MapBuilder.prototype.addWallStep = function (heightIndex) {
     let y = MapBuilder.WALL_HEIGHTS[heightIndex];
     this.walls.addSlice(SliceType.STEP, y);
 };
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
